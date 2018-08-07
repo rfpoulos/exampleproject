@@ -23,11 +23,11 @@ var router = function(page) {
     mainPage.classList.add('none');
     signInPage.classList.add('none');
 
-    if (page === 'main') {
-        mainPage.setAttribute('class', 'main-page');
-    } else if (page === 'profile' ) {
-        profilePage.setAttribute('class', 'profile');
-    } else if ( page === 'signin') {
-        signInPage.setAttribute('class', 'signin');
-    }
+    routes[page]()
+}
+
+var routes = {
+    main: function() { mainPage.setAttribute('class', 'main'); },
+    profile: function() { profilePage.setAttribute('class', 'profile'); },
+    signin: function() { signInPage.setAttribute('class', 'signin'); },
 }
